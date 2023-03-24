@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2022 The LineageOS Project
+ * Copyright (C) 2022-2023 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "vendor.lineage.livedisplay@2.1-service.moto_kona"
+#define LOG_TAG "vendor.lineage.livedisplay@2.1-service.moto_bengal"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>

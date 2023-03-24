@@ -1,17 +1,7 @@
 #
-# Copyright (C) 2019-2022 The LineageOS Project
+# Copyright (C) 2019-2023 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 # Enable updating of APEXes
@@ -54,8 +44,8 @@ PRODUCT_PACKAGES += \
     WifiResTarget
 
 PRODUCT_PACKAGES += \
-    FrameworksResMotoKona \
-    SettingsResMotoKona
+    FrameworksResMotoBengal \
+    SettingsResMotoBengal
 
 # A/B
 AB_OTA_UPDATER := true
@@ -147,12 +137,12 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
-    audio.primary.kona \
+    audio.primary.bengal \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
     tinymix \
-    sound_trigger.primary.kona
+    sound_trigger.primary.bengal
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
@@ -245,12 +235,12 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    gralloc.kona \
+    gralloc.bengal \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
     libqdMetaData \
     libqdMetaData.system \
-    memtrack.kona \
+    memtrack.bengal \
     vendor.display.config@1.15.vendor \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
@@ -274,10 +264,10 @@ PRODUCT_PACKAGES += \
     com.motorola.hardware.biometric.fingerprint@1.0.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/idc/uinput-egis.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-egis.idc \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    $(LOCAL_PATH)/configs/keylayout/uinput-egis.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-egis.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
+    $(LOCAL_PATH)/configs/idc/uinput-fpsensor.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpsensor.idc \
+    $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
+    $(LOCAL_PATH)/configs/keylayout/uinput-fpsensor.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpsensor.kl
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -341,11 +331,11 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.motokona
+    android.hardware.lights-service.moto_bengal
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.moto_kona
+    vendor.lineage.livedisplay@2.1-service.moto_bengal
 
 # Media
 PRODUCT_PACKAGES += \
@@ -357,8 +347,8 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs_kona.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_kona.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance_kona.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_kona.xml \
+    $(LOCAL_PATH)/configs/media_codecs_bengal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_bengal.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance_bengal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_bengal.xml \
     $(LOCAL_PATH)/configs/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
     $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml
 
@@ -436,7 +426,7 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.moto_kona
+    vendor.lineage.touch@1.0-service.moto_bengal
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -523,4 +513,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/motorola/sm8250-common/sm8250-common-vendor.mk)
+$(call inherit-product, vendor/motorola/sm6115-common/sm6115-common-vendor.mk)

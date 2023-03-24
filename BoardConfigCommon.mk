@@ -1,17 +1,7 @@
 #
-# Copyright (C) 2017-2022 The LineageOS Project
+# Copyright (C) 2017-2023 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 BUILD_BROKEN_DUP_RULES := true
@@ -19,7 +9,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 BOARD_VENDOR := motorola
 
-COMMON_PATH := device/motorola/sm8250-common
+COMMON_PATH := device/motorola/sm6115-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -47,7 +37,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/motorola/sm8250
+TARGET_KERNEL_SOURCE := kernel/motorola/sm6115
 
 # Kernel modules - Audio
 TARGET_MODULE_ALIASES += \
@@ -55,7 +45,7 @@ TARGET_MODULE_ALIASES += \
     apr_dlkm.ko:audio_apr.ko \
     bolero_cdc_dlkm.ko:audio_bolero_cdc.ko \
     hdmi_dlkm.ko:audio_hdmi.ko \
-    machine_dlkm.ko:audio_machine_kona.ko \
+    machine_dlkm.ko:audio_machine_bengal.ko \
     mbhc_dlkm.ko:audio_mbhc.ko \
     native_dlkm.ko:audio_native.ko \
     pinctrl_lpi_dlkm.ko:audio_pinctrl_lpi.ko \
@@ -85,7 +75,7 @@ TARGET_MODULE_ALIASES += \
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := kona
+TARGET_BOARD_PLATFORM := bengal
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
 # Audio
@@ -133,7 +123,7 @@ DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_moto_kona
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_moto_bengal
 
 # Media
 TARGET_USES_ION := true
@@ -146,8 +136,8 @@ BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 BOARD_USES_METADATA_PARTITION := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
-BOARD_DTBOIMG_PARTITION_SIZE := 0x1800000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
+BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -168,10 +158,10 @@ endif
 BOARD_ODMIMAGE_PARTITION_RESERVED_SIZE := 30720000
 BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 30720000
 BOARD_MOT_DP_GROUP_PARTITION_LIST := odm product system system_ext vendor
-BOARD_MOT_DP_GROUP_SIZE := 6438256640
+BOARD_MOT_DP_GROUP_SIZE := 10800332800 # ( BOARD_SUPER_PARTITION_SIZE - 4MB )
 BOARD_SUPER_PARTITION_GROUPS := mot_dp_group
-BOARD_SUPER_PARTITION_SIZE := 12884901888
-BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x04000000
+BOARD_SUPER_PARTITION_SIZE := 10804527104
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
@@ -230,4 +220,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/motorola/sm8250-common/BoardConfigVendor.mk
+-include vendor/motorola/sm6115-common/BoardConfigVendor.mk

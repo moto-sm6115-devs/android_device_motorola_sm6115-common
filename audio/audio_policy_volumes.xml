@@ -11,9 +11,9 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                              ref="DEFAULT_VOICE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>0,-3600</point>
-        <point>33,-2300</point>
-        <point>66,-1600</point>
+        <point>0,-3800</point>
+        <point>33,-1700</point>
+        <point>66,-700</point>
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_EARPIECE"

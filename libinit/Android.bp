@@ -1,12 +1,12 @@
 //
-// Copyright (C) 2022 The LineageOS Project
+// Copyright (C) 2022-2023 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_static {
-    name: "libinit_moto_kona",
-    srcs: ["init_moto_kona.cpp"],
+    name: "libinit_moto_bengal",
+    srcs: ["init_moto_bengal.cpp"],
     recovery_available: true,
     include_dirs: ["system/core/init"],
     shared_libs: ["libbase"]

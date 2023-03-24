@@ -1,12 +1,12 @@
 //
-// Copyright (C) 2022 The LineageOS Project
+// Copyright (C) 2022-2023 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.1-service.moto_kona",
-    init_rc: ["vendor.lineage.livedisplay@2.1-service.moto_kona.rc"],
+    name: "vendor.lineage.livedisplay@2.1-service.moto_bengal",
+    init_rc: ["vendor.lineage.livedisplay@2.1-service.moto_bengal.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     srcs: [
@@ -28,5 +28,5 @@ cc_binary {
         "vendor.lineage.livedisplay@2.0-sysfs-headers",
     ],
     vendor: true,
-    vintf_fragments: ["vendor.lineage.livedisplay@2.1-service.moto_kona.xml"],
+    vintf_fragments: ["vendor.lineage.livedisplay@2.1-service.moto_bengal.xml"],
 }

@@ -23,7 +23,7 @@ if [ ! -f $persist_fps_id ]; then
     return -1
 fi
 FPS_VENDOR_NONE=none
-FPS_VENDOR_EGIS=egis
+FPS_VENDOR_CHIPONE=chipone
 FPS_VENDOR_FPC=fpc
 
 prop_fps_status=vendor.hw.fingerprint.status
@@ -58,8 +58,8 @@ if [ $fps == $FPS_VENDOR_FPC ]; then
     notice "start fps_hal"
     start fps_hal
 else
-    notice "start ets_hal"
-    start ets_hal
+    notice "start fpsensor_hal"
+    start chipone_fp_hal
 fi
 
 notice "wait for HAL finish ..."
@@ -89,11 +89,15 @@ fi
 
 if [ $fps == $fps_vendor2 ]; then
     if [ $fps == $FPS_VENDOR_FPC ]; then
+        log "remove FPC driver"
         rmmod fpc1020_mmi
-        insmod /vendor/lib/modules/ets_fps_mmi.ko
-        fps=$FPS_VENDOR_EGIS
+        log "- install chipone driver"
+        insmod /vendor/lib/modules/fpsensor_spi_tee.ko
+        fps=$FPS_VENDOR_CHIPONE
     else
-        rmmod ets_fps_mmi
+        log "remove chipone driver"
+        rmmod fpsensor_spi_tee
+        log "- install fpc driver"
         insmod /vendor/lib/modules/fpc1020_mmi.ko
         fps=$FPS_VENDOR_FPC
     fi

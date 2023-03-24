@@ -1,9 +1,6 @@
-#
-# Egis Touch sensor driver
-#
-#
+# Chipone fingerprint sensor
 
 device.internal = 1
-keyboard.layout = uinput-egis
+keyboard.layout = uinput-fpsensor
 keyboard.builtIn = 1
 keyboard.orientationAware = 1

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The LineageOS Project
+ * Copyright (C) 2022-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.touch@1.0-service.moto_kona"
+#define LOG_TAG "vendor.lineage.touch@1.0-service.moto_bengal"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>

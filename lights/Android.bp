@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2019-2020 The LineageOS Project
+// Copyright (C) 2019-2023 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.lights-service.motokona",
+    name: "android.hardware.lights-service.moto_bengal",
     relative_install_path: "hw",
-    init_rc: ["android.hardware.lights.motokona.rc"],
-    vintf_fragments: ["android.hardware.lights.motokona.xml"],
+    init_rc: ["android.hardware.lights.moto_bengal.rc"],
+    vintf_fragments: ["android.hardware.lights.moto_bengal.xml"],
     vendor: true,
     shared_libs: [
         "libbase",

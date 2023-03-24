@@ -36,9 +36,12 @@
 /sys/devices/virtual/input/input[0-9]+/xtalk            u:object_r:vendor_sysfs_laser:s0
 
 # Fingerprint
+/(mnt/vendor/persist|persist)/chipone(/.*)?             u:object_r:vendor_persist_fps_file:s0
 /(mnt/vendor/persist|persist)/egis(/.*)?                u:object_r:vendor_persist_fps_file:s0
 /(mnt/vendor/persist|persist)/fps(/.*)?                 u:object_r:vendor_persist_fps_file:s0
+/(vendor|system/vendor)/bin/chipone_ident               u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/fpc_ident                   u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-chipone          u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets              u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc              u:object_r:hal_fingerprint_default_exec:s0
 /data/vendor/.fps(/.*)?                                 u:object_r:fingerprint_vendor_data_file:s0
@@ -50,10 +53,10 @@
 /(vendor|system/vendor)/bin/hw/vendor\.zui\.hardware\.ifaa@1\.0-service                 u:object_r:hal_ifaa_default_exec:s0
 
 # Lights
-/(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.motokona              u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.moto_bengal             u:object_r:hal_light_default_exec:s0
 
 # LiveDisplay
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.moto_kona     u:object_r:hal_lineage_livedisplay_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.moto_bengal     u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Motobox
 /(vendor|system/vendor)/bin/motobox                     u:object_r:vendor_motobox_exec:s0
@@ -66,7 +69,7 @@
 /dev/socket/cutback                                     u:object_r:cutback_socket:s0
 
 # Touch
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.moto_kona           u:object_r:hal_lineage_touch_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.moto_bengal           u:object_r:hal_lineage_touch_default_exec:s0
 
 # Thermal
 /dev/mmi_sys_temp                                       u:object_r:vendor_thermal_device:s0
