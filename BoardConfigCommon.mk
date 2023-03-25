@@ -38,6 +38,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/motorola/sm6115
+TARGET_KERNEL_CONFIG := vendor/motorola/bengal-perf_defconfig vendor/motorola/moto-bengal.config
 
 # Kernel modules - Audio
 TARGET_MODULE_ALIASES += \
